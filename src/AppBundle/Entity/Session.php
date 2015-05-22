@@ -79,6 +79,11 @@ class Session
         $this->stagiaires = new ArrayCollection();
     }
 
+    public function getReadableDate()
+    {
+        $readable = $this->dateDebut->format('d-m-Y');
+        return $readable;
+    }
     /**
      * Get id
      *

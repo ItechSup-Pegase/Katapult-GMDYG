@@ -82,13 +82,6 @@ class Stagiaire
         $this->sessions = new ArrayCollection();
     }
 
-    public function getReadableDate()
-    {
-        
-       $readable=$this->dateDebut->format(string);
-        return $readable;
-    }
-
     /**
      * Get id
      *
