@@ -1,0 +1,49 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}admin{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset("/bundles/app/css/style.css")}}">
+	<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+{% endblock %}
+
+{% block body %}
+		<div class="sidebar">
+			<a href="{{ path('homepage') }}" class="logo"><h2>Sofitech</h2></a>
+			<ul class="menu">
+				<li>
+					<a href="{{ path('entreprise') }}">
+						<p class="entreprise">Entreprises</p>
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('stagiaire') }}">
+						<p class="stagiaire">Stagiaires</p>
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('formateur') }}">
+					<p class="formateur">Formateurs</p>
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('formation') }}">
+						<p class="formation">Formations</p>
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('session') }}">
+						<p class="session">Sessions</p>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<p class="deconnexion">Déconnexion</p>
+					</a>
+				</li>
+			</ul>
+		</div>
+	<div class="main">
+		{% block content %}{% endblock %}
+	</div>
+{% endblock %}

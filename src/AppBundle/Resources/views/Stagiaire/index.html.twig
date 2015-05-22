@@ -1,0 +1,42 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block content -%}
+    <h1>Stagiaire list</h1>
+
+    <a href="{{ path('stagiaire_new')}}"  class="entry">
+        <img src="{{asset('bundles/app/image/0050-folder-plus.png')}}"> Nouvelle entrée
+    </a>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Adresse</th>
+                <th>Telephone</th>
+                <th>Mail</th>
+                <th>Entreprise</th>
+                <th>Voir</th>
+                <th>Editer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('stagiaire_show', { 'id': entity.id }) }}">{{ entity.nom }}</a></td>
+                <td>{{ entity.prenom }}</td>
+                <td>{{ entity.adresse }}</td>
+                <td>{{ entity.telephone }}</td>
+                <td>{{ entity.mail }}</td>
+                <td>{{ entity.entreprise.nom }}</td>
+                <td>
+                    <a href="{{ path('stagiaire_show', { 'id': entity.id }) }}"><img src="{{asset('bundles/app/image/0135-search.png')}}"></a>
+                </td>
+                <td>
+                    <a href="{{ path('stagiaire_edit', { 'id': entity.id }) }}"><img src="{{asset('bundles/app/image/0006-pencil.png')}}"></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}

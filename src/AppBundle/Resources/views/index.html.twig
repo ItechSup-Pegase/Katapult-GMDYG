@@ -1,0 +1,28 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block content %}	
+	<a href="/entreprise" class="box-size">
+		<img src="{{ asset('/bundles/app/image/office.png')}}">
+		<h3>Entreprises</h3>
+	</a>
+	<a href="/stagiaire" class="box-size">
+		<img src="{{ asset('/bundles/app/image/0115-users.svg')}}">
+		<h3>Stagiaires</h3>
+	</a>
+	<a href="formateur" class="box-size">
+		<img src="{{asset('/bundles/app/image/0119-user-tie.svg')}}">
+		<h3>Formateurs</h3>
+	</a>
+	<a href="formation" class="box-size">
+		<img src="{{asset('/bundles/app/image/0032-book.svg')}}">
+		<h3>Formations</h3>
+	</a>
+	<a href="session" class="box-size">
+		<img src="{{asset('/bundles/app/image/0084-calendar.svg') }}">
+		<h3>Sessions</h3>
+	</a>
+	<a href="#" id="site-v" class="box-size">
+		<img src="{{asset('/bundles/app/image/0277-exit.svg')}}">
+		<h3>Déconnexion</h3>
+	</a>
+{% endblock %}

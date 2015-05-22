@@ -1,0 +1,36 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block content -%}
+    <h1>Formation list</h1>
+
+    <a href="{{ path('formation_new')}}" class="entry">
+        <img src="{{asset('bundles/app/image/0050-folder-plus.png')}}"> Nouvelle entrée
+    </a>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Intitule</th>
+                <th>Duree</th>
+                <th>Placedispo</th>
+                <th>Voir</th>
+                <th>Editer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('formation_show', { 'id': entity.id }) }}">{{ entity.intitule }}</a></td>
+                <td>{{ entity.duree }}</td>
+                <td>{{ entity.placeDispo }}</td>
+                <td>
+                    <a href="{{ path('formation_show', { 'id': entity.id }) }}"><img src="{{asset('bundles/app/image/0135-search.png')}}"></a>
+                </td>
+                <td>
+                    <a href="{{ path('formation_edit', { 'id': entity.id }) }}"><img src="{{asset('bundles/app/image/0006-pencil.png')}}"></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}

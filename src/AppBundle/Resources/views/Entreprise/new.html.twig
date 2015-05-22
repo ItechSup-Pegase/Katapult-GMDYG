@@ -1,0 +1,15 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block content -%}
+    <h1>Entreprise creation</h1>
+
+    {{ form(form) }}
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('entreprise') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

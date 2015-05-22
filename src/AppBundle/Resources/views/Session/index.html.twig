@@ -1,0 +1,43 @@
+{% extends 'AppBundle::layout.html.twig' %}
+{%block title %} Session {% endblock %}
+
+{% block content -%}
+    <h1>Session list</h1>
+
+    <a href="{{ path('session_new') }}" class="entry">
+        <img src="{{asset('bundles/app/image/0050-folder-plus.png')}}"> Nouvelle entrée
+    </a>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Formation</th>
+                <th>Formateur</th>
+                <th>Datedebut</th>
+                <th>Datefin</th>
+                <th>Lieu</th>
+                <th>Placerest</th>
+                <th>Voir</th>
+                <th>Editer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('session_show', { 'id': entity.id }) }}">{{ entity.formation.intitule }}</a></td>
+                <td>{{ entity.formateur.nom }}</td>
+                <td>{% if entity.dateDebut %}{{ entity.dateDebut|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if entity.dateFin %}{{ entity.dateFin|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ entity.lieu }}</td>
+                <td>{{ entity.placeRest }}</td>
+                <td>
+                    <a href="{{ path('session_show', { 'id': entity.id }) }}"><img src="{{asset('bundles/app/image/0135-search.png')}}"></a>
+                </td>
+                <td>
+                    <a href="{{ path('session_edit', { 'id': entity.id }) }}"><img src="{{asset('bundles/app/image/0006-pencil.png')}}"></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% endblock %}
