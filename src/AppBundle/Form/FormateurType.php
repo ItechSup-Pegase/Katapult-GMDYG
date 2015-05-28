@@ -20,6 +20,7 @@ class FormateurType extends AbstractType
             ->add('adresse')
             ->add('telephone')
             ->add('mail')
+            ->add('matiere')
         ;
     }
     

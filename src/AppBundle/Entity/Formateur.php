@@ -58,6 +58,13 @@ class Formateur
     private $mail;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="maitiere", type="string", length=255)
+     */
+    private $matiere;
+
+    /**
      * Relation
      *
      *@ORM\OneToMany(targetEntity="Session", mappedBy="formateur")
@@ -73,7 +80,6 @@ class Formateur
     {
         $this->sessions = new ArrayCollection();
     }
-
 
     /**
      * Get id
@@ -198,6 +204,29 @@ class Formateur
     public function getMail()
     {
         return $this->mail;
+    }
+
+    /**
+     * Set matiere
+     *
+     * @param string $matiere
+     * @return Formateur
+     */
+    public function setMatiere($matiere)
+    {
+        $this->matiere = $matiere;
+
+        return $this;
+    }
+
+    /**
+     * Get matiere
+     *
+     * @return string 
+     */
+    public function getMatiere()
+    {
+        return $this->matiere;
     }
 
     /**

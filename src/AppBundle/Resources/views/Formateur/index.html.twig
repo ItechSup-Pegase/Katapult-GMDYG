@@ -15,6 +15,7 @@
                 <th>Adresse</th>
                 <th>Telephone</th>
                 <th>Mail</th>
+                <th>Matiere</th>
                 <th>Voir</th>
                 <th>Editer</th>
             </tr>
@@ -27,6 +28,7 @@
                 <td>{{ entity.adresse }}</td>
                 <td>{{ entity.telephone }}</td>
                 <td>{{ entity.mail }}</td>
+                <td>{{ entity.matiere }}</td>
                 <td>
                     <a href="{{ path('formateur_show', { 'id': entity.id }) }}"><img src="{{asset('bundles/app/image/0135-search.png')}}"></a>
                 </td>
