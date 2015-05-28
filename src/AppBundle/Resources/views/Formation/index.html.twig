@@ -12,7 +12,6 @@
             <tr>
                 <th>Intitule</th>
                 <th>Duree</th>
-                <th>Placedispo</th>
                 <th>Voir</th>
                 <th>Editer</th>
             </tr>
@@ -22,7 +21,6 @@
             <tr>
                 <td><a href="{{ path('formation_show', { 'id': entity.id }) }}">{{ entity.intitule }}</a></td>
                 <td>{{ entity.duree }}</td>
-                <td>{{ entity.placeDispo }}</td>
                 <td>
                     <a href="{{ path('formation_show', { 'id': entity.id }) }}"><img src="{{asset('bundles/app/image/0135-search.png')}}"></a>
                 </td>

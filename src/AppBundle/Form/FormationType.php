@@ -17,7 +17,6 @@ class FormationType extends AbstractType
         $builder
             ->add('intitule')
             ->add('duree')
-            ->add('placeDispo')
         ;
     }
     

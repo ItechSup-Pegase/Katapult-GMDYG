@@ -37,13 +37,6 @@ class Formation
     private $duree;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="placeDispo", type="decimal")
-     */
-    private $placeDispo;
-
-    /**
      *
      * Relation
      *
@@ -114,29 +107,6 @@ class Formation
     public function getDuree()
     {
         return $this->duree;
-    }
-
-    /**
-     * Set placeDispo
-     *
-     * @param string $placeDispo
-     * @return Formation
-     */
-    public function setPlaceDispo($placeDispo)
-    {
-        $this->placeDispo = $placeDispo;
-
-        return $this;
-    }
-
-    /**
-     * Get placeDispo
-     *
-     * @return string 
-     */
-    public function getPlaceDispo()
-    {
-        return $this->placeDispo;
     }
 
     /**
