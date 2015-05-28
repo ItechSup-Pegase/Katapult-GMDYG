@@ -38,11 +38,17 @@ class Formation
 
     /**
      *
-     * Relation
-     *
      *@ORM\OneToMany(targetEntity="Session", mappedBy="formation")
      */
     protected $sessions;
+
+    /**
+     *
+     *@ORM\ManyToOne(targetEntity="Categorie",inversedBy="formations")
+     *@ORM\JoinColumn(name="categorie_id",referencedColumnName="id")
+     *
+     */
+    protected $categorie;
 
     /*
      * Constructeur Relations
@@ -140,5 +146,28 @@ class Formation
     public function getSessions()
     {
         return $this->sessions;
+    }
+
+    /**
+     * Set categorie
+     *
+     * @param \AppBundle\Entity\Categorie $categorie
+     * @return Formation
+     */
+    public function setCategorie(\AppBundle\Entity\Categorie $categorie = null)
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Get categorie
+     *
+     * @return \AppBundle\Entity\Categorie 
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
     }
 }
