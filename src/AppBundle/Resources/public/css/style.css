@@ -16,7 +16,7 @@
 .main {
     background: url(../image/background.jpg);
     bottom: 0;
-    left: 17%;
+    left: 0;
     position: absolute;
     right: 0;
     top: 0;
@@ -26,6 +26,10 @@
 .main h1{
     text-align: center;
     color: #1C1A1D;
+ }
+
+ .contenu{
+    margin-left: 17%;
  }
 
 .entry {

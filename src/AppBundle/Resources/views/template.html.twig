@@ -1,0 +1,46 @@
+{% extends 'AppBundle::layout.html.twig'%}
+
+{% block content -%}
+    <div class="sidebar">
+			<a href="{{ path('homepage') }}" class="logo"><h2>Sofitech</h2></a>
+			<ul class="menu">
+				<li>
+					<a href="{{ path('entreprise') }}">
+						<p class="entreprise">Entreprises</p>
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('stagiaire') }}">
+						<p class="stagiaire">Stagiaires</p>
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('formateur') }}">
+					<p class="formateur">Formateurs</p>
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('categorie') }}">
+					<p class="categories">Catégories</p>
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('formation') }}">
+						<p class="formation">Formations</p>
+					</a>
+				</li>
+				<li>
+					<a href="{{ path('session') }}">
+						<p class="session">Sessions</p>
+					</a>
+				</li>
+				<li>
+					 <a href="{{path('fos_user_security_logout') }}"><p class="deconnexion">Déconnexion</p>
+                	</a>
+				</li>
+			</ul>
+		</div>
+		<div class="contenu">
+			{% block section %}{% endblock %}
+		</div>
+{% endblock %}
