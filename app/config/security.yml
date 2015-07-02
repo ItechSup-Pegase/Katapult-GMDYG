@@ -4,6 +4,8 @@ security:
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
+        ROLE_SECR:       ROLE_USER
+        ROLE_COMP:       ROLE_USER
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
@@ -22,6 +24,10 @@ security:
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/, role: [ROLE_ADMIN, ROLE_USER, ROLE_SUPER_ADMIN]}
+        - { path: ^/formation/, role: [ROLE_ADMIN, ROLE_SECR, ROLE_COMP]}
+        - { path: ^/entreprise/, role: [ROLE_ADMIN, ROLE_SECR]}
+        - { path: ^/stagiaire/, role: [ROLE_ADMIN, ROLE_SECR]}
+        - { path: ^/formateur/, role: ROLE_ADMIN }
+        - { path: ^/session/, role: [ROLE_ADMIN, ROLE_COMP]}
+        - { path: ^/categorie/, role: [ROLE_ADMIN, ROLE_COMP]}
+        - { path: ^/, role: IS_AUTHENTICATED_FULLY}
