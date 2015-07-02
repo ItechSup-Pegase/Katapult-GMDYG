@@ -30,4 +30,4 @@ security:
         - { path: ^/formateur/, role: ROLE_ADMIN }
         - { path: ^/session/, role: [ROLE_ADMIN, ROLE_COMP]}
         - { path: ^/categorie/, role: [ROLE_ADMIN, ROLE_COMP]}
-        - { path: ^/, role: IS_AUTHENTICATED_FULLY}
+        - { path: ^/, role: IS_AUTHENTICATED_FULLY }

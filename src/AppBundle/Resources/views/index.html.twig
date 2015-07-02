@@ -1,6 +1,10 @@
 {% extends 'AppBundle::layout.html.twig' %}
 
 {% block content %}	
+	<a href="#" class="box-size">
+		<img src="{{ asset('/bundles/app/image/hat.png')}}">
+		<h3>Sofitech</h3>
+	</a>
 	<a href="/entreprise" class="box-size">
 		<img src="{{ asset('/bundles/app/image/office.png')}}">
 		<h3>Entreprises</h3>
@@ -24,5 +28,9 @@
 	<a href="categorie" id="site-v" class="box-size">
 		<img src="{{asset('/bundles/app/image/0033-books.svg')}}">
 		<h3>Catégories</h3>
+	</a>
+	<a href="{{path('fos_user_security_logout')}}" id="site-v" class="box-size">
+		<img src="{{asset('/bundles/app/image/0277-exit.svg')}}">
+		<h3>Déconnexion</h3>
 	</a>
 {% endblock %}
