@@ -4,6 +4,43 @@
     <div class="sidebar">
 			<a href="{{ path('homepage') }}" class="logo"><h2>Sofitech</h2></a>
 			<ul class="menu">
+				{% if is_granted('ROLE_ADMIN') %}
+					<li>
+						<a href="{{ path('entreprise') }}">
+							<p class="entreprise">Entreprises</p>
+						</a>
+					</li>
+					<li>
+						<a href="{{ path('stagiaire') }}">
+						<p class="stagiaire">Stagiaires</p>
+						</a>
+					</li>
+					<li>
+						<a href="{{ path('formateur') }}">
+						<p class="formateur">Formateurs</p>
+						</a>
+					</li>
+					<li>
+						<a href="{{ path('categorie') }}">
+						<p class="categories">Catégories</p>
+						</a>
+					</li>
+					<li>
+						<a href="{{ path('formation') }}">
+							<p class="formation">Formations</p>
+						</a>
+					</li>
+					<li>
+						<a href="{{ path('session') }}">
+							<p class="session">Sessions</p>
+						</a>
+					</li>
+					<li>
+					 	<a href="{{path('fos_user_security_logout') }}"><p class="deconnexion">Déconnexion</p>
+                		</a>
+					</li>
+			{% endif %}
+			{% if is_granted('ROLE_SECR') %}
 				<li>
 					<a href="{{ path('entreprise') }}">
 						<p class="entreprise">Entreprises</p>
@@ -15,13 +52,19 @@
 					</a>
 				</li>
 				<li>
-					<a href="{{ path('formateur') }}">
-					<p class="formateur">Formateurs</p>
+					<a href="{{ path('formation') }}">
+						<p class="formation">Formations</p>
 					</a>
 				</li>
 				<li>
+				 	<a href="{{path('fos_user_security_logout') }}"><p class="deconnexion">Déconnexion</p>
+                	</a>
+				</li>
+			{% endif %}
+			{% if is_granted('ROLE_COMP') %}
+				<li>
 					<a href="{{ path('categorie') }}">
-					<p class="categories">Catégories</p>
+						<p class="categories">Catégories</p>
 					</a>
 				</li>
 				<li>
@@ -35,9 +78,10 @@
 					</a>
 				</li>
 				<li>
-					 <a href="{{path('fos_user_security_logout') }}"><p class="deconnexion">Déconnexion</p>
+				 	<a href="{{path('fos_user_security_logout') }}"><p class="deconnexion">Déconnexion</p>
                 	</a>
 				</li>
+			{% endif %}
 			</ul>
 		</div>
 		<div class="contenu">
