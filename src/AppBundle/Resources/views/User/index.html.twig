@@ -1,0 +1,41 @@
+{% extends 'AppBundle::template.html.twig' %}
+
+{% block section -%}
+    <h1>Utilisateur</h1>
+    <a href="{{ path('user_new') }}" class="entry"><img src="{{asset('bundles/app/image/0050-folder-plus.png')}}"> Nouvelle entrée
+    </a>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Nom d'utilisateur</th>
+                <th>Email</th>
+                <th>Rôle</th>
+                <th>Voir</th>
+                <th>Editer</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.username }}</a></td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.id }}</td>
+                <td>
+                <ul>
+                    <a href="{{ path('user_show', { 'id': entity.id }) }}"><img src="{{asset('bundles/app/image/0135-search.png')}}"></a>
+                </td>
+                <td>
+                    <a href="{{ path('user_edit', { 'id': entity.id }) }}"><img src="{{asset('bundles/app/image/0006-pencil.png')}}"></a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            
+        </li>
+    </ul>
+    {% endblock %}
